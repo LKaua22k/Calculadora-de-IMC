@@ -9,6 +9,14 @@
 }
 
 body{
-    
+    display: grid;
+    place-items: center;
+    height: 100%;
     font-size: 1.6rem;
+    --webkit-font-smoothing: antialiased;
 }
+
+.container{
+    background-color: white;
+}
+
