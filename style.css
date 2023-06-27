@@ -12,6 +12,7 @@
     --text-input:#212529;
     --bg-input:#DCE2E9;
     --bg-btn:#02799D;
+    --bg-erro:#F03E3E;
 
     --font-roboto:'Roboto', sans-serif;;
 
@@ -22,23 +23,27 @@
 body{
     background-color: var(--bg-color);
     font-size: 1.6rem;
-    display: grid;
-    place-items: center;
-    height: 100vh;
 }
 
 body,input,button,select,textarea{
     font-family: 'Roboto', sans-serif;
 }
 
-main{
+.container{ 
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.card{
     background-color:var(--white-color) ;
     border-radius: 0.6rem;
     padding: 4.8rem 6.4rem 6.4rem 6.4rem;
-    width: min(42.8rem,90%);
+    width: 42.8rem;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);    
 }
 
-main h1{
+.card h1{
     color: var(--tilte-color);
     font-size: 3.2rem;
     line-height: 4rem;
@@ -48,7 +53,7 @@ main h1{
 
 form{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 } 
 
 form input,button{
@@ -56,7 +61,11 @@ form input,button{
     border-radius: 0.4rem;
 }
 
-form label{
+.input-wrapper:first-child{
+    margin-bottom: 1.6rem;
+}
+
+.input-wrapper label{
     color: var(--text-color);
     font-weight: 400;
     font-size: 1.4rem;
@@ -64,18 +73,16 @@ form label{
     margin-bottom: 0.6rem;
 }
 
-form input{
+.input-wrapper input{
     background-color: var(--bg-input);
     border-radius: 0.4rem;
     border: 1px solid var(--bg-btn);
     color: var(--text-input);
     font-size: 1.6rem;
     line-height: 2rem;
+    width: 100%;
 }
 
-#inputWeight{
-    margin-bottom: 1.6rem;
-}
 
 form button{
     color: var(--white-color);
@@ -93,3 +100,69 @@ form button:hover{
     background-color:#17474d;
 }
 
+/* Alert error */
+.alert{
+    background-color: var(--bg-erro);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0.8rem 0;
+    color: var(--white-color);
+    font-weight: bold;
+    transform: translateY(-30rem);
+    transition: transform 0.5s;
+}
+
+.erro{
+    transform: translateY(0);
+}
+
+
+
+
+/* Modal */
+
+.modal-wrapper{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.70);
+    inset: 0;
+    display: grid;
+    place-content: center;
+}
+
+.modal.card{
+    width: 36.3rem;
+}
+
+.modal-wrapper.open{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-wrapper{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal{
+    position: relative;
+}
+
+.modal h2{
+    color: var(--tilte-color);
+    font-size: 3.2rem;
+    line-height: 4rem;
+    text-align: center;
+}
+
+.modal i{
+    border: none;
+    background-color: none;
+    font-size: 2.4rem;
+    position: absolute;
+    right: 1.6rem;
+    top: 1.6rem;
+    cursor: pointer;
+}

@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="./assets/Fonts/style.css">
+
     <!-- Link css -->
     <link rel="stylesheet" href="style.css">
 
@@ -20,20 +23,39 @@
 
 </head>
 <body>
-    <main>
-        <h1>Cálculo de IMC</h1>
-            
-        <form>
-            <label for="inputWeight">Peso (kg)</label>
-            <input type="number" name="weight" id="inputWeight">
 
-            <label for="inputHeight">Altura (m)</label>
-            <input type="number" id="inputHeight" name="height">
+    <div class="alert">
+        Digite soemnte numeros
+    </div>
 
-            <button type="submit" id="calcButton">Calcular IMC</button>
-        </form>
-    </main>
+    <div class="container">
+        <main class="card">
+            <h1>Cálculo de IMC</h1>
+             <form>
 
-    <script src="script.js"></script>
+                <div class="input-wrapper">
+                    <label for="inputWeight">Peso (kg)</label>
+                    <input type="text" name="weight" id="inputWeight">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="inputHeight">Altura (m)</label>
+                    <input type="text" id="inputHeight" name="height">
+                </div>
+
+                <button type="submit" id="calcButton">Calcular IMC</button>
+            </form>
+        </main>
+    </div>
+
+
+    <div class="modal-wrapper">
+        <div class="modal card">
+            <h2>Seu IMC é de</h2>
+            <i class="icon-x"></i>
+        </div>
+    </div>
+
+    <script src="script.js" defer type="module"></script>
 </body>
 </html>

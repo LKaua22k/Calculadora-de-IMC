@@ -1,19 +1,37 @@
-const inputWeight = document.querySelector('#inputWeight')
-const inputHeight = document.querySelector('#inputHeight')
-const calcButton = document.querySelector('#calcButton')
+import { Modal } from "./modal.js";
+import { Alert } from "./alert.js";
 
-function calc(e){
+const form = document.querySelector('form');
+const inputWeight = document.querySelector('#inputWeight');
+const inputHeight = document.querySelector('#inputHeight');
+
+
+form.onsubmit = (e) => {
     e.preventDefault()
-    const result = (inputWeight.value / ((inputHeight.value / 100) ** 2)).toFixed(2)
 
-    if(inputWeight.value != "" & inputHeight.value != ""){
-        return alert(result)
-    } else{
-        return alert("Please enter")
-       }
+    const weight = inputWeight.value
+    const height = inputHeight.value
 
+    const showAlertNuber = notNumber(weight) || notNumber(height)
+
+    if (showAlertNuber) {
+        Alert.open()
+        return;
+    }
+
+    Alert.close()
+    const result = IMC(height,weight)
+    const message = `Seu IMC é de ${result}`
+
+    Modal.message.innerText = message
+    Modal.open()
 }
 
+function notNumber(value) {
+   return isNaN(value) || value == ""
+} 
 
 
-calcButton.addEventListener('click', calc)
+function IMC(altura,peso){
+    return (peso / ((altura / 100) ** 2)).toFixed(2)
+}
