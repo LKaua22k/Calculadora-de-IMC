@@ -8,6 +8,8 @@ export const Modal = {
     },
     close:() => {
         Modal.wrapper.classList.remove('open');
+        inputWeight.value = ""
+        inputHeight.value = ""
     }
 
 }

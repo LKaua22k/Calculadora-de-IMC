@@ -3,6 +3,8 @@ export const Alert = {
 
     open:() => {
         Alert.element.classList.add('erro');
+        inputWeight.value = ""
+        inputHeight.value = ""
     },
     close:() => {
         Alert.element.classList.remove('erro');

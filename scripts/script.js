@@ -5,6 +5,7 @@ const form = document.querySelector('form');
 const inputWeight = document.querySelector('#inputWeight');
 const inputHeight = document.querySelector('#inputHeight');
 
+inputWeight.focus()
 
 form.onsubmit = (e) => {
     e.preventDefault()
