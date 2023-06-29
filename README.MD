@@ -30,7 +30,7 @@ Utilitários
 
 Pagina para saber como estar seu Índice de Massa Corpóral
 
-- [Acesse o projeto finalizado, online](https://lkaua22k.github.io/Guessing_game/)
+- [Acesse o projeto finalizado, online](https://lkaua22k.github.io/Calculadora-de-IMC/)
 
 ---
 
