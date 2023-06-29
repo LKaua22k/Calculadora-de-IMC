@@ -28,7 +28,7 @@ Utilitários
 
 ## 💻 Projeto
 
-------//-------
+Pagina para saber como estar seu Índice de Massa Corpóral
 
 - [Acesse o projeto finalizado, online](https://lkaua22k.github.io/Guessing_game/)
 
